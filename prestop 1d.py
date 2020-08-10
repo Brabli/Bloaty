@@ -8,7 +8,7 @@ damage_done = 0
 scy_att_bonus = 132 #max gear scy
 bgs_att_bonus=154 # max gear bgs
 damagelist=[]
-repetitions=1000
+repetitions=10000
 
 # = E * (B +64), B = equipment bonus, E = effective level
 # effective level = ATT/DEF LVL(include pots) * PRAYER BOOST, THEN ROUNDED down, +8, ROUND DOWN
@@ -60,51 +60,10 @@ for i in range(1,repetitions):
 count= 0
 
     #5 man bloat 2000hp
-for i in damagelist: 
-        if i > .5*2000 : 
-            count = count + 1
-print("Chances of getting 5% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
-
-count= 0
-
-for i in damagelist: 
-        if i > .10*2000 : 
-            count = count + 1
-print("Chances of getting 10% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
-
-count= 0
-
-for i in damagelist: 
-        if i > .11*2000 : 
-            count = count + 1
-print("Chances of getting 11% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
-
-count= 0
-
-for i in damagelist: 
-        if i > .12*2000 : 
-            count = count + 1
-print("Chances of getting 12% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
-
-count= 0
-
-for i in damagelist: 
-        if i > .13*2000 : 
-            count = count + 1
-print("Chances of getting 13% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
-
-count= 0
-
-for i in damagelist: 
-        if i > .14*2000 : 
-            count = count + 1
-print("Chances of getting 14% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
-
-count= 0
-
-for i in damagelist: 
-        if i > .15*2000 : 
-            count = count + 1
-print("Chances of getting 15% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
-
+for x in range(5,16):
+        for i in damagelist: 
+                if i > x*20 : 
+                    count = count + 1
+        print("Chances of getting " +str(x) + "% damage whilst Necking are: " + str((count/repetitions)*100) + "%")
+        count= 0
 
